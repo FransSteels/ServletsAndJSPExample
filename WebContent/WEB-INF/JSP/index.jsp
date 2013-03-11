@@ -41,6 +41,12 @@
 <a href="${requestAndCookieURL}">RequestParameters en Cookies</a>
 </li>
 
+<li>
+<c:url var="sessions" value="/Sessions" />
+
+<a href="${sessions}">Sessions</a>
+</li>
+
 </ul>
 
 </body>

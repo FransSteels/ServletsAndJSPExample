@@ -17,6 +17,7 @@ public class SessionsServlet extends HttpServlet {
 	
 	private static final String VIEW = "WEB-INF/JSP/sessions.jsp";
 	
+	// Hier bepaal je de URL die gebruikt wordt in de 'sendRedirect' methode van de response.
 	private static final String REDIRECT_URL = "/Sessions";
 	
 	/* Met deze annotatie onderdruk je de waarschuwingen 
@@ -92,7 +93,14 @@ public class SessionsServlet extends HttpServlet {
 			
 			}
 		
-		response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + REDIRECT_URL));
+		/* Om URL rewriting mogelijk te maken moet je de 'encodeRedirectURL' methode gebruiken
+		 * van het response object. Dan wordt de sessionid automatisch toegevoegd aan de URL van
+		 * zodra er een session aangemaakt is en er geen cookies aanvaard worden.
+		 * Met de 'getContextPath' methode van het request object bekom je de contextpath van je
+		 * site. Al de URL's in de JSP moeten ook gemaakt worden met behulp van de <c:url> tag om
+		 * URL rewriting mogelijk te maken.
+		 */		
+		 response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + REDIRECT_URL));
 		
 	}
 

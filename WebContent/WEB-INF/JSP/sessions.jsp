@@ -31,6 +31,18 @@
 
 </form>
 
+
+<!-- 
+	Met deze EL expressie kan je een session attribuut
+	rechtstreeks aanspreken in de JSP. Als dit session
+	attribuut niet bestaat krijg je hier niets te zien.
+	Als er session attribuut dezelfde naam heeft als een
+	request attribuut moet je expliciet verwijzen naar de
+	session op de volgende manier : ${sessionScope.eenSessionAttribuut}
+	Anders krijg je het requet attribuut. (probeer dit uit)
+	Het sessionScope object is een voorbeeld van een
+	impliciet object in de JSP. (cfr. cookie object)
+ -->
 <h2>${eenSessionAttribuut}</h2>
 
 <c:url var="invalidateSessionURL" value="/Invalidate"/>

@@ -20,8 +20,11 @@ public class InvalidateSessionServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
+		// Als er een session aanwezig is wordt dit if-block uitgevoerd
 		if (session != null) {
 			
+			// Met dit statement kan je een session onmiddelijk verwijderen.
+			// Dus voor dat de session-timeout bereikt is. (zie DD (web.xml))
 			session.invalidate();
 			
 		}

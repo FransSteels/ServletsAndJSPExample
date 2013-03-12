@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>ServletsAndJSPExampleProject</display-name>
+  
+  <!-- 
+  		Met deze tags wordt de welcome file bepaald. Dit is de file die
+  		wordt aangesproken als de gebruiker naar de root van de site surft.  
+   -->
   <welcome-file-list>
     <welcome-file>IndexServlet</welcome-file>
   </welcome-file-list>
+  
+  <!-- 	
+  		Met deze tags bepaal je dat een session 1 minuut blijft bestaan
+  		nadat deze de laatste keer aangesproken is. Dus als de gebruiker van de
+  		site 1 minuut niets doet zal zijn session verwijderd worden. Dit is
+  		uiteraard veel te kort voor een normaal gebruik van de site maar dit
+  		geldt als voorbeeld. Als je de session-timeout niet expliciet 
+  		opgeeft wordt de default timeout waarde gebruikt, voor TomCat is die 30 minuten.
+   -->
   <session-config>
     <session-timeout>1</session-timeout>
   </session-config>
+  
 </web-app>
